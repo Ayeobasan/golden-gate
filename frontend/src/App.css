@@ -5,12 +5,13 @@
 }
 
 /* Smooth Animations */
-* {
+/* * {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
+} */
 
-button, a {
+button,
+a {
   transition-property: all;
   transition-duration: 300ms;
 }
@@ -43,18 +44,17 @@ button, a {
   0% {
     background-position: -200% center;
   }
+
   100% {
     background-position: 200% center;
   }
 }
 
 .gold-shimmer {
-  background: linear-gradient(
-    90deg,
-    #D4AF37 0%,
-    #F2D06B 50%,
-    #D4AF37 100%
-  );
+  background: linear-gradient(90deg,
+      #D4AF37 0%,
+      #F2D06B 50%,
+      #D4AF37 100%);
   background-size: 200% auto;
   animation: goldShimmer 3s linear infinite;
   -webkit-background-clip: text;
@@ -115,6 +115,7 @@ button:focus {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -131,7 +132,7 @@ button:focus {
     font-size: 2.5rem;
     line-height: 1.2;
   }
-  
+
   h2 {
     font-size: 2rem;
     line-height: 1.3;
