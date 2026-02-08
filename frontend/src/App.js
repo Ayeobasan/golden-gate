@@ -166,9 +166,9 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      {/* <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
         <ChevronRight className="text-steamedWhite rotate-90" size={32} />
-      </div>
+      </div> */}
     </section>
   );
 };
