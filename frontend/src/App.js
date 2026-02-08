@@ -3,11 +3,11 @@ import "@/App.css";
 import axios from "axios";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import Lenis from '@studio-freight/lenis';
-import { 
-  MapPin, 
-  Phone, 
-  Clock, 
-  Mail, 
+import {
+  MapPin,
+  Phone,
+  Clock,
+  Mail,
   ChevronRight,
   Star,
   Award,
@@ -42,7 +42,14 @@ const FloatingNav = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -64,9 +71,8 @@ const FloatingNav = () => {
         <button
           key={id}
           onClick={() => scrollToSection(id)}
-          className={`font-manrope text-sm font-medium transition-colors duration-300 ${
-            activeSection === id ? 'text-lacquerRed' : 'text-oolongTea hover:text-lacquerRed'
-          }`}
+          className={`font-manrope text-sm font-medium transition-colors duration-300 ${activeSection === id ? 'text-lacquerRed' : 'text-oolongTea hover:text-lacquerRed'
+            }`}
           data-testid={`nav-${id}`}
         >
           {label}
@@ -78,15 +84,29 @@ const FloatingNav = () => {
 
 // Hero Section
 const HeroSection = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-oolongTea" data-testid="hero-section">
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(44,36,32,0.5), rgba(44,36,32,0.3)), url('https://images.unsplash.com/photo-1757332914512-ffaf5b521ba8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwxfHxlZ2clMjB0YXJ0cyUyMGdvbGRlbiUyMGNydXN0fGVufDB8fHx8MTc3MDUxMDg2MHww&ixlib=rb-4.1.0&q=85')`
         }}
       />
-      
+
       <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-32 z-10">
         <div className="max-w-3xl">
           <motion.div
@@ -99,7 +119,7 @@ const HeroSection = () => {
               San Francisco's Finest Since 1948
             </span>
           </motion.div>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -110,33 +130,33 @@ const HeroSection = () => {
             The Legend of<br />
             <span className="italic">Golden Gate</span>
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="font-manrope text-steamedWhite/90 text-lg md:text-xl mb-8 max-w-2xl"
           >
-            Hand-crafted egg tarts, moon cakes, and traditional Chinese pastries 
+            Hand-crafted egg tarts, moon cakes, and traditional Chinese pastries
             that have delighted generations in the heart of Chinatown.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-wrap gap-4"
           >
-            <button 
-              onClick={() => document.getElementById('menu').scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() => scrollToSection('menu')}
               className="bg-lacquerRed text-steamedWhite rounded-full px-8 py-4 hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 font-manrope font-semibold tracking-wide flex items-center gap-2"
               data-testid="view-menu-btn"
             >
               View Our Menu
               <ChevronRight size={20} />
             </button>
-            <button 
-              onClick={() => document.getElementById('visit').scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() => scrollToSection('visit')}
               className="border-2 border-steamedWhite text-steamedWhite bg-transparent rounded-full px-8 py-4 hover:bg-steamedWhite hover:text-oolongTea transition-all duration-300 font-manrope font-semibold"
               data-testid="visit-us-btn"
             >
@@ -172,14 +192,14 @@ const AboutSection = () => {
               A <span className="italic">Heritage</span> of Taste
             </h2>
             <p className="text-textMuted text-lg mb-6 leading-relaxed">
-              Nestled in the vibrant heart of San Francisco's Chinatown, Golden Gate Bakery 
-              has been a beloved landmark since 1948. For over 75 years, we've perfected 
-              the art of traditional Chinese pastries, bringing authentic flavors and 
+              Nestled in the vibrant heart of San Francisco's Chinatown, Golden Gate Bakery
+              has been a beloved landmark since 1948. For over 75 years, we've perfected
+              the art of traditional Chinese pastries, bringing authentic flavors and
               time-honored recipes to our community.
             </p>
             <p className="text-textMuted text-lg mb-8 leading-relaxed">
-              Our legendary egg tarts, with their flaky golden crusts and silky custard 
-              filling, have become a San Francisco icon. Each pastry is handcrafted daily 
+              Our legendary egg tarts, with their flaky golden crusts and silky custard
+              filling, have become a San Francisco icon. Each pastry is handcrafted daily
               using traditional techniques passed down through generations.
             </p>
             <div className="flex gap-8 flex-wrap">
@@ -236,7 +256,7 @@ const MenuSection = () => {
       name: "Legendary Egg Tarts",
       description: "Our signature pastry with flaky golden crust and silky custard filling",
       image: "https://images.unsplash.com/photo-1757332914512-ffaf5b521ba8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwxfHxlZ2clMjB0YXJ0cyUyMGdvbGRlbiUyMGNydXN0fGVufDB8fHx8MTc3MDUxMDg2MHww&ixlib=rb-4.1.0&q=85",
-      featured: true
+      featured: false
     },
     {
       name: "Traditional Moon Cakes",
@@ -295,9 +315,8 @@ const MenuSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ${
-                product.featured ? 'md:col-span-2 md:row-span-2' : ''
-              }`}
+              className={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ${product.featured ? 'md:col-span-2 md:row-span-2' : ''
+                }`}
               data-testid={`product-card-${index}`}
             >
               <div className="relative overflow-hidden h-64 md:h-80">
@@ -431,7 +450,7 @@ const VisitSection = () => {
           >
             <div className="bg-warmBeige/10 backdrop-blur-sm p-8 rounded-2xl border border-pastryGold/20">
               <h3 className="font-playfair font-bold text-2xl mb-6 text-pastryGold">Find Us</h3>
-              
+
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <MapPin className="text-pastryGold mt-1 flex-shrink-0" size={24} />
@@ -478,7 +497,7 @@ const VisitSection = () => {
             className="bg-warmBeige/10 backdrop-blur-sm p-8 rounded-2xl border border-pastryGold/20"
           >
             <h3 className="font-playfair font-bold text-2xl mb-6 text-pastryGold">Business Hours</h3>
-            
+
             <div className="space-y-3">
               {hours.map((item, index) => (
                 <div
@@ -566,7 +585,7 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
           className="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-pastryGold/20"
           data-testid="contact-form"
         >
@@ -653,6 +672,20 @@ const ContactSection = () => {
 
 // Footer
 const Footer = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <footer className="bg-oolongTea text-steamedWhite py-12" data-testid="footer">
       <div className="max-w-7xl mx-auto px-6">
@@ -672,7 +705,7 @@ const Footer = () => {
               {['Home', 'About', 'Menu', 'Visit', 'Contact'].map((link) => (
                 <button
                   key={link}
-                  onClick={() => document.getElementById(link.toLowerCase()).scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => scrollToSection(link.toLowerCase())}
                   className="block text-steamedWhite/70 hover:text-pastryGold transition-colors"
                 >
                   {link}
@@ -708,11 +741,17 @@ const Footer = () => {
 // Main App Component
 function App() {
   useEffect(() => {
-    // Initialize Lenis smooth scroll
+    // Initialize Lenis smooth scroll with optimized settings
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.5,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smoothWheel: true,
+      wheelMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
     });
 
     function raf(time) {
@@ -725,6 +764,21 @@ function App() {
     return () => {
       lenis.destroy();
     };
+  }, []);
+
+  // Add CSS for smooth scrolling
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      html {
+        scroll-behavior: auto;
+      }
+      body {
+        overflow-x: hidden;
+      }
+    `;
+    document.head.appendChild(style);
+    return () => document.head.removeChild(style);
   }, []);
 
   return (
