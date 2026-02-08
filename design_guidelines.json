@@ -1,0 +1,165 @@
+{
+  "design_strategy": {
+    "theme": "Golden Heritage - Modern Luxury meets Chinatown Nostalgia",
+    "core_values": ["Authenticity", "Warmth", "Premium Craft", "Visual Appetite"],
+    "personality": "The sophisticated grandmother who bakes the best tarts in the world but lives in a modern penthouse."
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Playfair Display, serif",
+      "weight": "700",
+      "style": "Italic for emphasis",
+      "usage": "Main section titles, Hero text"
+    },
+    "body": {
+      "font_family": "Manrope, sans-serif",
+      "weight": "400",
+      "usage": "Paragraphs, descriptions, UI elements"
+    },
+    "accent": {
+      "font_family": "Dancing Script, cursive",
+      "usage": "Small notes like 'Freshly Baked', 'Since 19xx'"
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": "#8B1E1E",
+      "primary_desc": "Lacquer Red - Deep, rich, heritage-focused. NOT bright signal red.",
+      "secondary": "#D4AF37",
+      "secondary_desc": "Pastry Gold - The color of a perfect egg tart crust.",
+      "background": "#F9F7F2",
+      "background_desc": "Steamed Bun White - Warm off-white/cream. NEVER pure white #FFFFFF.",
+      "surface": "#F0EBE0",
+      "surface_desc": "Warm Beige - For cards and sections.",
+      "text_main": "#2C2420",
+      "text_main_desc": "Oolong Tea - Dark warm grey/brown. Softer than black.",
+      "text_muted": "#6B5D55",
+      "accent_green": "#2F5C56",
+      "accent_green_desc": "Jade Green - For subtle natural touches."
+    },
+    "gradients": {
+      "hero_overlay": "linear-gradient(to bottom, rgba(44,36,32,0.3), rgba(44,36,32,0.1))",
+      "gold_shimmer": "linear-gradient(45deg, #D4AF37, #F2D06B, #D4AF37)"
+    }
+  },
+  "layout_system": {
+    "grid_strategy": "Bento Grid (Mode A)",
+    "spacing": "Generous. Use p-12 to p-24 for section padding.",
+    "container": "max-w-7xl mx-auto px-6",
+    "rules": [
+      "No symmetry in the Hero section.",
+      "Overlap images and text slightly to create depth.",
+      "Use negative space to let the food photography breathe."
+    ]
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#8B1E1E] text-[#F9F7F2] rounded-full px-8 py-4 hover:bg-[#6B1616] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 font-serif tracking-wide",
+      "secondary": "border-2 border-[#8B1E1E] text-[#8B1E1E] bg-transparent rounded-full px-8 py-4 hover:bg-[#8B1E1E] hover:text-white transition-all duration-300"
+    },
+    "cards": {
+      "product": "bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 group",
+      "feature": "bg-[#F0EBE0] p-8 rounded-xl border border-[#D4AF37]/20"
+    },
+    "navigation": {
+      "style": "Floating glassmorphism",
+      "classes": "fixed top-6 left-1/2 -translate-x-1/2 bg-[#F9F7F2]/80 backdrop-blur-md border border-white/20 rounded-full px-8 py-3 shadow-lg z-50 flex gap-8 items-center"
+    }
+  },
+  "motion": {
+    "library": "Framer Motion + Lenis (Smooth Scroll)",
+    "animations": {
+      "hero_reveal": "Staggered fade-up with slight rotation",
+      "scroll_parallax": "Images move slower than text (y: -50 to 50)",
+      "hover_card": "Scale 1.02 + Image Zoom 1.1",
+      "text_highlight": "Gold underline draws itself on scroll"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_bg": {
+        "url": "https://images.unsplash.com/photo-1757332914512-ffaf5b521ba8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwxfHxlZ2clMjB0YXJ0cyUyMGdvbGRlbiUyMGNydXN0fGVufDB8fHx8MTc3MDUxMDg2MHww&ixlib=rb-4.1.0&q=85",
+        "alt": "Golden Egg Tarts Close-up",
+        "category": "hero"
+      },
+      "products": [
+        {
+          "url": "https://images.unsplash.com/photo-1640274251909-aff175d87ff6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwxfHxjaGluZXNlJTIwYmFrZXJ5JTIwcGFzdHJpZXMlMjBlbGVnYW50fGVufDB8fHx8MTc3MDUxMDg2NXww&ixlib=rb-4.1.0&q=85",
+          "alt": "Assorted Pastries Display",
+          "category": "menu"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1599061012488-2106d5ff51a1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwyfHxjaGluZXNlJTIwYmFrZXJ5JTIwcGFzdHJpZXMlMjBlbGVnYW50fGVufDB8fHx8MTc3MDUxMDg2NXww&ixlib=rb-4.1.0&q=85",
+          "alt": "Cookies on Tray",
+          "category": "menu"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1596548739280-53724bdf0992?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwzfHxjaGluZXNlJTIwYmFrZXJ5JTIwcGFzdHJpZXMlMjBlbGVnYW50fGVufDB8fHx8MTc3MDUxMDg2NXww&ixlib=rb-4.1.0&q=85",
+          "alt": "Fresh Buns",
+          "category": "menu"
+        }
+      ],
+      "atmosphere": [
+        {
+          "url": "https://images.unsplash.com/photo-1646812969262-33c1afe4ee37?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwyfHxzYW4lMjBmcmFuY2lzY28lMjBjaGluYXRvd24lMjBzdHJlZXQlMjBhZXN0aGV0aWN8ZW58MHx8fHwxNzcwNTEwODcwfDA&ixlib=rb-4.1.0&q=85",
+          "alt": "Chinatown Lanterns",
+          "category": "story"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1761695939616-1c03087c1ce4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwyfHxiYWtlcnklMjBpbnRlcmlvciUyMHdhcm0lMjBsaWdodGluZ3xlbnwwfHx8fDE3NzA1MTA4Nzd8MA&ixlib=rb-4.1.0&q=85",
+          "alt": "Warm Bakery Interior",
+          "category": "about"
+        }
+      ]
+    },
+    "icons": "Lucide React (Use thin strokes for elegance)"
+  },
+  "page_structure": [
+    {
+      "section": "Hero",
+      "type": "Immersive Split",
+      "content": "Headline: 'The Legend of San Francisco'. Sub: 'Hand-crafted egg tarts since 19xx'. CTA: 'View Menu'. Background: Hero Image."
+    },
+    {
+      "section": "The Legend (About)",
+      "type": "Story Scroll",
+      "content": "History of the bakery, Chinatown context. Use 'Chinatown Lanterns' image with parallax."
+    },
+    {
+      "section": "Signature Bakes (Menu)",
+      "type": "Bento Grid",
+      "content": "Highlight Egg Tarts (Large), Moon Cakes (Medium), Pork Buns (Small). Use 'Products' images."
+    },
+    {
+      "section": "Visit Us (Location)",
+      "type": "Map & Info",
+      "content": "1029 Grant Ave. Live Status Indicator. Hours: 8AM-8PM. Map integration."
+    },
+    {
+      "section": "Testimonials",
+      "type": "Horizontal Scroll",
+      "content": "Customer reviews in elegant serif typography cards."
+    },
+    {
+      "section": "Footer",
+      "type": "Minimal Luxury",
+      "content": "Social links, copyright, simple logo."
+    }
+  ],
+  "instructions_to_main_agent": [
+    "INSTALL: framer-motion, lenis, lucide-react, clsx, tailwind-merge",
+    "SETUP: Configure Tailwind with the custom colors defined in 'colors' section.",
+    "FONTS: Import Playfair Display and Manrope from Google Fonts in index.css.",
+    "CRITICAL: Do not use standard Shadcn cards. Build custom 'product cards' with the hover effects described.",
+    "CRITICAL: Ensure the 'Lacquer Red' is used sparingly as an accent, not a background color (except maybe footer).",
+    "CRITICAL: The 'Egg Tart' image is the hero. Make it look delicious.",
+    "NAV: Create the floating navigation bar as specified in components."
+  ],
+  "universal_guidelines": [
+    "Avoid 'AI Slop' - no generic centered text blocks.",
+    "Use 2x padding than you think is necessary.",
+    "Micro-interactions on everything (buttons, links, cards).",
+    "Dark colors for text, never pure black.",
+    "Respect the 'Golden Heritage' theme - it's not just a bakery, it's a landmark."
+  ]
+}
