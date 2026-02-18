@@ -13,6 +13,7 @@ import {
   Award,
   Heart
 } from "lucide-react";
+import { Analytics } from '@vercel/analytics/react';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
@@ -791,6 +792,7 @@ function App() {
       <VisitSection />
       <ContactSection />
       <Footer />
+      <Analytics />
     </div>
   );
 }
